@@ -1,0 +1,159 @@
+:root {
+  --text-color: #FFFFFF;
+  --label-color: rgba(255,255,255,0.87);
+  --highlight-color: #F1CB65;
+  --main-bg: #263620;
+  --button-bg: #EECE5A;
+  --button-pressed-bg: #42A55F;
+  --spacer: 1rem;
+  --border-radius: 4px;
+  --main-content-bg: #2D2D2D;
+}
+
+html {
+  font-family: "Open Sans";
+  height: 100%;
+  background-color: var(--main-bg);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title {
+  color: var(--text-color);
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: var(--spacer);
+}
+
+.main-title--desktop {
+  display: none;
+}
+
+.main-title__highlight {
+  color: var(--highlight-color);
+}
+
+.car {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.car-model {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: var(--spacer);
+}
+
+.car-model > span:first-child {
+  text-transform: uppercase;
+}
+
+.car-km {
+  color: var(--highlight-color);
+  font-family: 'Encode Sans Expanded';
+  font-weight: bold;
+  text-align: center;
+  font-size: 58px;
+  margin-bottom: calc(var(--spacer) * 3);
+}
+
+.hulk {
+  max-width: 300px;
+}
+
+.tender-form__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacer);
+}
+
+.tender-form__item > label {
+  color: var(--label-color);
+  font-size: 18px;
+  margin-bottom: calc(var(--spacer) / 2);
+}
+
+.tender-form__item > input {
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 0.7rem;
+}
+
+.tender-form__item > select {
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: white;
+  padding: 0.7rem;
+}
+
+.tender-form__submit {
+  margin-top: var(--spacer);
+  background-color: var(--button-bg);
+  border-radius: var(--border-radius);
+  border: none;
+  width: 100%;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.1s linear, background-color 0.1s linear;
+  outline: none;
+}
+
+.tender-form__submit:hover,
+.tender-form__submit:focus {
+  box-shadow: inset 0 0 4px 0 #000000;
+}
+
+.tender-form__submit:active {
+  background-color: var(--button-pressed-bg);
+}
+
+@media (min-width: 900px) {
+  .content {
+    padding: 0;
+    height: 100%;
+    flex-direction: row;
+  }
+  
+  .main-title--mobile {
+    display: none;
+  }
+  
+  .main-title--desktop {
+    display: block;
+  }
+  
+  
+  .car-model {
+    font-size: 36px;
+    min-width: 180px;
+  }
+  
+  .car-km {
+    font-size: 100px;
+  }
+  
+  .main-content {
+    background-color: var(--main-content-bg);
+    padding: 4rem 3rem;
+    margin: 0 2rem;
+    max-width: 390px;
+  }
+}
